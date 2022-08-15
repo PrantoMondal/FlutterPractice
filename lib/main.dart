@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_container.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -20,43 +22,64 @@ void main() {
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
-                ListTile(
-                  leading: Icon(Icons.favorite),
-                  title: const Text('ListTile with red background'),
-                  tileColor: Colors.grey,
-                  subtitle: Text('afjasklfja'),
-                  trailing: Icon(Icons.star),
-                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ListTile(
+                    leading: Icon(Icons.favorite),
+                    title: const Text('ListTile with red background'),
+                    tileColor: Colors.grey,
+                    subtitle: Text('afjasklfja'),
+                    trailing: Icon(Icons.star),
+                    shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+                  ),
                 ),
-            Container(
-              height: 80,
-              width: 80,
-              margin: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 2.0),
-              decoration: BoxDecoration(
-                boxShadow: [BoxShadow(
-                    blurRadius: 10,
-                  spreadRadius: 2,
-                  color: Colors.grey
-                )],
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.green,
-                    Colors.deepOrange,
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyContainer(child:Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.camera,
+                          color: Colors.black,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text('Camera'),
+                      ],
+                    ), ),
+                    MyContainer(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.share,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('Share'),
+                        ],
+                      ),
+                    ),
+                    MyContainer(child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.navigation_outlined,
+                          color: Colors.black,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text('Navigation'),
+                      ],
+                    ),),
                   ],
                 ),
-                color: Colors.blue
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.camera),
-                  Text('Camera'),
-                ],
-              ),
-            )
               ],
             ),
           ),
