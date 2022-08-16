@@ -14,7 +14,7 @@ class MyContainer extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
